@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        Witaj, @ViewBag.Imie
+        <p>Zapraszam na obiad</p>
+        @Html.ActionLink("Wyślij odp", "odpowiedz");
+    </div>
+</body>
+</html>
