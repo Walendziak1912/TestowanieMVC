@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="~/Scripts/knockout-3.4.2.js"></script>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/ViewModels/DataBindingViewModel.js"></script>
+    <title>Łącza</title>
+    <style>
+        input {
+            margin: 5px 5px;
+        }      
+    </style>
+</head>
+<body>
+    <h1>Testy knockout</h1>
+    <p>
+        <h3 data-bind="text: imie"></h3>
+        <form>
+            <label for="imie">Imie</label>
+            <input type="text" id="imie" data-bind="textinput: imie" />
+
+            <label for="nazwisko">Nazwisko</label>
+            <input type="text" id="nazwisko" />
+
+            <button data-bind="click: update">Update</button>
+        </form>
+    </p>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ko.applyBindings(defaultViewModel);
+        });
+       
+        var defaultViewModel = (function ($, ko) {        
+        var me = {
+            // The "title" property sets up our Subject of the Observer pattern
+            imie: ko.observable(""),
+            update: update
+        };
+
+        function update() {           
+            me.imie("Koniec");
+        }
+
+        return me;
+        }(jQuery, ko));
+    </script>
+</body>
+</html>

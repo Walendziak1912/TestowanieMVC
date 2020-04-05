@@ -5,16 +5,66 @@
 
 <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        Witaj, @ViewBag.Imie
-        <p>Zapraszam na obiad</p>
-        @Html.ActionLink("Wyślij odp", "odpowiedz");
-    </div>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+        @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">*@
+
+        <script src="~/Scripts/bootstrap.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery-1.9.1.js"></script>
+
+        <link href="~/Content/css/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+            <script src="~/Content/js/plugins/datetimepicker/bootstrap-datetimepicker.js"></script>
+
+        <title>Index</title>
+        <style>
+            .btn a {
+                color: white;
+                text-decoration: none;
+            }
+
+            body {
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="text-center">
+            <h2>Witaj, @ViewBag.Imie</h2>
+            <h4>Zapraszam na obiad</h4>
+            <img src="https://res.cloudinary.com/yaffa-publishing/image/fetch/q_auto,c_fit,w_630,f_auto/http%3A%2F%2Fyaffa-cdn.s3.amazonaws.com%2Fyaffadsp%2Fimages%2FdmImage%2FSourceImage%2Frabbit-eaten-by-fox.jpg" alt="Simply Easy Learning" width="600" height="550">
+            <br>
+            <br>
+            <br>
+            <div class="btn btn-success">
+                @Html.ActionLink("Odpowiedz", "odpowiedz");
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class='input-group date'>
+                <input type='text' class="form-control" id="datetimepicker1" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+
+        @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js"></script>*@
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datepicker();
+            });
+        </script>
+    </body>
 </html>

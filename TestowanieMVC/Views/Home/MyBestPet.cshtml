@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   
+    <meta name="viewport" content="width=device-width" />
+    <title>MyBestPet</title>
+</head>
+<body>
+    <div>
+        <button id="Pokaz_Ukryj">Pokaz/Ukryj</button><br>
+        <button id="gora">Do góry</button>
+        <button id="dol">Do dołu</button>
+    </div>
+
+
+    <div id="Lisio">
+        <img src="https://s25.flog.pl/media/foto/12552872_-lisio.jpg" width="450" height="300" />
+    </div>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#Pokaz_Ukryj").click(function () {
+                $("#Lisio").toggle("slow");
+            });
+            $("#gora").click(function () {
+                $("img").fadeIn(1000);
+                $("#Lisio").slideToggle("slow");
+            });
+            $("#dol").click(function () {
+                $("#Lisio").fadeOut();
+            });
+        });
+    </script>
+</body>
+</html>

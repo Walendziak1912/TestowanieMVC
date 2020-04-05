@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TestowanieMVC.Models;
 
 namespace TestowanieMVC.Controllers
 {
@@ -12,11 +13,28 @@ namespace TestowanieMVC.Controllers
         public ActionResult Index()
         {
             ViewBag.Imie = "Lis";
-            return View();
+            //return View("NaukaHTML");
+            return View("Login");
         }
+        [HttpGet]
         public ViewResult Odpowiedz()
         {
             return View();
         }
+
+        public ViewResult Odpowiedz(Osoba OsobaResponce)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else 
+            {
+                return View("Podziekowanie", OsobaResponce);
+            }
+            
+        }
+
+
     }
 }

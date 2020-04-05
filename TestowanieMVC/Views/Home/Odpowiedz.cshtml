@@ -9,11 +9,32 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles.css"/>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-theme.css" rel="stylesheet" />
+
     <title>Odpowiedz</title>
 </head>
 <body>
-    <div> 
-        dupa 123
+    <div class="">
+        
     </div>
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary();
+        <p>Imię i nazwisko : @Html.TextBoxFor(x => x.Imie)  @Html.TextBoxFor(x => x.Nazwisko)</p>
+        <p>Telefon: @Html.TextBoxFor(x => x.Telefon)</p>
+        <p>Wiek: @Html.TextBoxFor(x => x.Wiek)</p>
+        <p>
+            Czy dostałeś informację?
+            @Html.DropDownListFor(x => x.Potwierdzony,
+            new[] {
+                new SelectListItem()
+                    { Text = "Tak", Value = bool.TrueString},
+                new SelectListItem()
+                    { Text = "Nie, nic nie dostałem", Value = bool.FalseString }},
+            "Wybierz opcję")
+        </p>
+        <input type="submit" value="Wyślij powiadomienie" />
+    }
 </body>
 </html>

@@ -1,0 +1,29 @@
+﻿@model TestowanieMVC.Models.Osoba
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <title>Podziekowanie</title>
+    
+</head>
+<body>
+    <div class="text-center"> 
+        <h1>Dziękuję, @Model.Imie @Model.Nazwisko!</h1>      
+        @if (Model.Potwierdzony == true)
+        {
+            @:Dzieki jeszce raz
+        }
+        else
+        {
+            @:Wypierdalaj @Model.Imie!
+        }
+    </div>
+</body>
+</html>
